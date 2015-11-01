@@ -6,7 +6,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": ".."
+            "url": "../../scaledrone-php/"
         }
     ],
     "require": {

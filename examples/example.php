@@ -1,7 +1,6 @@
 <?php
 
-require_once '../lib/ScaleDrone/Client.php';
-#require_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $auth = array(
     'channel_id' => 'G3TYvCzoXtrIuEtQ',

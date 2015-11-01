@@ -17,7 +17,7 @@ class Client
             'base_uri' => 'https://api2.scaledrone.com'
         ]);
         $this->auth = [$options->channel_id, $options->secret_key];
-        $this->channel_id = $options->channel_id
+        $this->channel_id = $options->channel_id;
     }
 
     public function publish($room, $message)
