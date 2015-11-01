@@ -1,9 +1,7 @@
 <?php
 namespace ScaleDrone;
 
-use Guzzle\Http\Client as GuzzleClient;
-use Guzzle\Http\ClientInterface;
-use Guzzle\Http\Message\RequestInterface;
+use GuzzleHttp\Client as GuzzleClient;
 
 class Client
 {
@@ -23,7 +21,6 @@ class Client
     public function publish($room, $message)
     {
         $url = $this->channel_id . '/' . $room . '/publish';
-        echo $url;
         return $this->guzzle->request('POST', $url, [
             'auth' => $this->auth,
             'body' => $message
