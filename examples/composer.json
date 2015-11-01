@@ -1,0 +1,15 @@
+{
+    "name": "scaledrone-example",
+    "description": "ScaleDrone example",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": ".."
+        }
+    ],
+    "require": {
+        "scaledrone/scaledrone": "*"
+    }
+}

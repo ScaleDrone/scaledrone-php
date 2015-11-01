@@ -1,0 +1,26 @@
+{
+	"name": "scaledrone/scaledrone",
+	"description": "Official ScaleDrone PHP pushing library",
+	"homepage": "https://www.scaledrone.com/",
+	"authors": [
+		{
+			"name": "Serge",
+			"email": "s.herkyl+composer@gmail.com",
+			"homepage": "http://github.com/herkyl"
+		}
+	],
+	"keywords": ["scaledrone", "push", "publish"],
+	"autoload": {
+		"psr-0": {
+			"ScaleDrone\\": "lib/"
+		}
+	},
+	"require": {
+		"ext-json": "*",
+		"guzzle/guzzle": "3.9.*"
+	},
+	"support": {
+		"issues": "https://github.com/ScaleDrone/scaledrone-php/issues"
+	},
+	"license": "MIT"
+}
