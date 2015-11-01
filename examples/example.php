@@ -10,5 +10,5 @@ $auth = array(
 $client = new ScaleDrone\Client($auth);
 
 $message = array('email' => 'test2@foo.bar', 'name' => 'php name');
-$response = $client->publish('notifications', $message);
+$response = $client->publish('notifications', 'foobar');
 echo $response->code;

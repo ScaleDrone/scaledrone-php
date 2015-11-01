@@ -1,7 +1,7 @@
 <?php
 namespace ScaleDrone;
 
-use GuzzleHttp\Client as GuzzleClient;
+use Guzzle\Http\Client as GuzzleClient;
 
 class Client
 {
