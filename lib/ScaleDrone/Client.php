@@ -14,6 +14,8 @@ class Client
         $this->guzzle = new GuzzleHttp\Client([
             'base_uri' => 'https://api2.scaledrone.com'
         ]);
+        $response = $client->request('GET', 'test');
+        print_r($response);
         $this->auth = [$options['channel_id'], $options['secret_key']];
         $this->channel_id = $options['channel_id'];
     }
