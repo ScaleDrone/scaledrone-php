@@ -21,8 +21,8 @@ class Client
     public function publish($room, $message)
     {
         $url = $this->channel_id . '/' . $room . '/publish';
-        echo $this->guzzle;
-        echo $this->guzzle->request;
+        print_r($this->guzzle);
+        print_r($this->guzzle->request);
         return $this->guzzle->request('POST', $url, [
             'auth' => $this->auth,
             'body' => $message

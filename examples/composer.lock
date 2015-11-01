@@ -108,7 +108,7 @@
             "source": {
                 "type": "git",
                 "url": "../../scaledrone-php/",
-                "reference": "75505f6022c862a7b4602d4dbe0cd583873fbf2f"
+                "reference": "d404a6075452d377a1ccdfa0578447c3dc4d1647"
             },
             "require": {
                 "ext-json": "*",
@@ -140,7 +140,7 @@
             "support": {
                 "issues": "https://github.com/ScaleDrone/scaledrone-php/issues"
             },
-            "time": "2015-11-01 11:09:00"
+            "time": "2015-11-01 11:09:30"
         },
         {
             "name": "symfony/event-dispatcher",
