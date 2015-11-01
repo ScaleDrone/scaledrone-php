@@ -165,13 +165,13 @@
         "source": {
             "type": "git",
             "url": "../../scaledrone-php/",
-            "reference": "8b4ceebbf56f4367867c4a2704877f612b5a1cf7"
+            "reference": "c8941c60852c380b1022a2cff8d468bc99c84c57"
         },
         "require": {
             "ext-json": "*",
             "guzzle/guzzle": "3.9.*"
         },
-        "time": "2015-11-01 11:03:36",
+        "time": "2015-11-01 11:08:04",
         "type": "library",
         "installation-source": "source",
         "autoload": {
