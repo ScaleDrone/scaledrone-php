@@ -16,13 +16,14 @@ class Client
         $this->guzzle = new GuzzleClient([
             'base_uri' => 'https://api2.scaledrone.com'
         ]);
-        $this->auth = [$options->channel_id, $options->secret_key];
-        $this->channel_id = $options->channel_id;
+        $this->auth = [$options['channel_id'], $options['secret_key']];
+        $this->channel_id = $options['channel_id'];
     }
 
     public function publish($room, $message)
     {
         $url = $this->channel_id . '/' . $room . '/publish';
+        echo $url;
         return $this->guzzle->request('POST', $url, [
             'auth' => $this->auth,
             'body' => $message
