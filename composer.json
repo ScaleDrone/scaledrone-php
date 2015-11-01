@@ -16,8 +16,7 @@
 		}
 	},
 	"require": {
-		"ext-json": "*",
-		"guzzle/guzzle": "3.9.*"
+		"guzzlehttp/guzzle": "~6.0"
 	},
 	"support": {
 		"issues": "https://github.com/ScaleDrone/scaledrone-php/issues"
