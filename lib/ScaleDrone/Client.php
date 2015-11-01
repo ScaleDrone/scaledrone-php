@@ -1,7 +1,7 @@
 <?php
 namespace ScaleDrone;
 
-use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp;
 
 class Client
 {
@@ -11,7 +11,7 @@ class Client
 
     public function __construct($options = array())
     {
-        $this->guzzle = new GuzzleClient([
+        $this->guzzle = new GuzzleHttp\Client([
             'base_uri' => 'https://api2.scaledrone.com'
         ]);
         $this->auth = [$options['channel_id'], $options['secret_key']];
@@ -21,7 +21,6 @@ class Client
     public function publish($room, $message)
     {
         $url = $this->channel_id . '/' . $room . '/publish';
-        print_r($this->guzzle);
         print_r($this->guzzle->request);
         return $this->guzzle->request('POST', $url, [
             'auth' => $this->auth,

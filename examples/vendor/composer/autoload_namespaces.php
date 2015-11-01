@@ -7,6 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ScaleDrone\\' => array($vendorDir . '/scaledrone/scaledrone/lib'),
-    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
-    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
 );
