@@ -233,7 +233,7 @@
             "source": {
                 "type": "git",
                 "url": "../../scaledrone-php/",
-                "reference": "d60b7a979820b137fb0aaed40820f28df8dbb186"
+                "reference": "014c4e255c7dea9db505aad6221a3af33545cfd9"
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.0"
@@ -264,7 +264,7 @@
             "support": {
                 "issues": "https://github.com/ScaleDrone/scaledrone-php/issues"
             },
-            "time": "2015-11-01 11:15:12"
+            "time": "2015-11-01 11:15:59"
         }
     ],
     "packages-dev": [],
