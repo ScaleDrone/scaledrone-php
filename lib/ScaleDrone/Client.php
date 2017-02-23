@@ -14,7 +14,13 @@ class Client
         $this->guzzle = new GuzzleHttp\Client([
             'base_uri' => 'https://api2.scaledrone.com'
         ]);
-        $this->auth = [$options['channel_id'], $options['secret_key']];
+        if ($options['bearer']) {
+            $this->headers = [
+              'Authorization' => "Bearer {$options['bearer']}"
+            ];
+        } else {
+            $this->auth = [$options['channel_id'], $options['secret_key']];
+        }
         $this->channel_id = $options['channel_id'];
     }
 
@@ -23,6 +29,7 @@ class Client
         $url = $this->channel_id . '/' . $room . '/publish';
         $response = $this->guzzle->request('POST', $url, [
             'auth' => $this->auth,
+            'headers' => $this->headers,
             'json' => $message
         ]);
         return $response;
@@ -32,7 +39,8 @@ class Client
     {
         $url = $this->channel_id . '/stats';
         $response = $this->guzzle->request('GET', $url, [
-            'auth' => $this->auth
+            'auth' => $this->auth,
+            'headers' => $this->headers
         ]);
         return $response;
     }
@@ -41,7 +49,8 @@ class Client
     {
         $url = $this->channel_id . '/users';
         $response = $this->guzzle->request('GET', $url, [
-            'auth' => $this->auth
+            'auth' => $this->auth,
+            'headers' => $this->headers
         ]);
         return $response;
     }

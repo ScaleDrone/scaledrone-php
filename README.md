@@ -26,12 +26,22 @@ Then update your dependencies:
 $ php composer.phar update
 ```
 
-##Usage
+## Usage
 Create a new instance of ScaleDrone passing it the `channel_id` and `secret_key` that you can find from the channel's page
 ```php
 $auth = array(
-    'channel_id' => 'G3TYvCzXatrIuEtQ',
-    'secret_key' => 'M7Oc1DYXFgkCaUh4XQFC3TRV1R3RThPd'
+    'channel_id' => 'CHANNEL_ID',
+    'secret_key' => 'SECRET_KEY'
+);
+
+$client = new ScaleDrone\Client($auth);
+```
+
+If you wish to connect using a [JSON Web Token](https://www.scaledrone.com/docs/jwt-authentication) you can set it like this:
+```php
+$auth = array(
+    'channel_id' => 'CHANNEL_ID',
+    'bearer' => 'GENERATED_JWT'
 );
 
 $client = new ScaleDrone\Client($auth);
