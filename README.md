@@ -34,7 +34,7 @@ $auth = array(
     'secret_key' => 'SECRET_KEY'
 );
 
-$client = new ScaleDrone\Client($auth);
+$client = ScaleDrone\Client::create($auth);
 ```
 
 If you wish to connect using a [JSON Web Token](https://www.scaledrone.com/docs/jwt-authentication) you can set it like this:
@@ -44,7 +44,7 @@ $auth = array(
     'bearer' => 'GENERATED_JWT'
 );
 
-$client = new ScaleDrone\Client($auth);
+$client = ScaleDrone\Client::create($auth);
 ```
 
 Publishing a message
