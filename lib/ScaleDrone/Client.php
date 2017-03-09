@@ -2,12 +2,21 @@
 namespace ScaleDrone;
 
 use GuzzleHttp;
+use GuzzleHttp\ClientInterface;
 
 class Client
 {
-    private $guzzle;
+    /** @var array */
     private $auth;
+
+    /** @var string */
     private $channel_id;
+
+    /** @var ClientInterface */
+    private $guzzle;
+
+    /** @var array */
+    private $headers = [];
 
     public function __construct($options = array())
     {
