@@ -10,6 +10,8 @@
 # Icon must end with two \r
 Icon
 
+# IDE files
+/.idea
 
 # Thumbnails
 ._*
@@ -29,5 +31,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+/composer.lock
+/vendor
 examples/vendor
 examples

@@ -2,19 +2,28 @@
 namespace ScaleDrone;
 
 use GuzzleHttp;
+use GuzzleHttp\ClientInterface;
 
 class Client
 {
-    private $guzzle;
+    /** @var array */
     private $auth;
+
+    /** @var string */
     private $channel_id;
+
+    /** @var ClientInterface */
+    private $guzzle;
+
+    /** @var array */
+    private $headers = [];
 
     public function __construct($options = array())
     {
         $this->guzzle = new GuzzleHttp\Client([
             'base_uri' => 'https://api2.scaledrone.com'
         ]);
-        if ($options['bearer']) {
+        if (isset($options['bearer'])) {
             $this->headers = [
               'Authorization' => "Bearer {$options['bearer']}"
             ];
