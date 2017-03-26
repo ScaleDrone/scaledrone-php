@@ -6,13 +6,14 @@ Official ScaleDrone PHP pushing library. This is a wrapper around the REST API.
 Make sure you have [composer](https://getcomposer.org) installed.
 
 Install it directly:
+
 ```
 composer require scaledrone/scaledrone
 ```
 
 Or add the following to your `composer.json`:
 
-```js
+```json
 {
     "require": {
         "scaledrone/scaledrone": "*"
@@ -34,7 +35,7 @@ $auth = array(
     'secret_key' => 'SECRET_KEY'
 );
 
-$client = new ScaleDrone\Client($auth);
+$client = ScaleDrone\Client::create($auth);
 ```
 
 If you wish to connect using a [JSON Web Token](https://www.scaledrone.com/docs/jwt-authentication) you can set it like this:
@@ -44,7 +45,7 @@ $auth = array(
     'bearer' => 'GENERATED_JWT'
 );
 
-$client = new ScaleDrone\Client($auth);
+$client = ScaleDrone\Client::create($auth);
 ```
 
 Publishing a message
@@ -63,3 +64,8 @@ Connected users list
 ```php
 $response = $client->users_list();
 ```
+
+## Running Tests
+
+Clone this repository and change directories to the repository root. Install all dependencies with `composer install`.
+Then, just run `vendor/bin/phpunit`.
