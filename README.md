@@ -1,7 +1,7 @@
 # ScaleDrone PHP
 Official ScaleDrone PHP pushing library. This is a wrapper around the REST API.
 
-##Installation
+## Installation
 
 Make sure you have [composer](https://getcomposer.org) installed.
 
