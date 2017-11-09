@@ -70,6 +70,11 @@ Getting the list of users in a room
 $response = $client->room_members_list('roomName');
 ```
 
+Getting the list of rooms and their members
+```php
+$response = $client->all_room_members_list('roomName');
+```
+
 ## Running Tests
 
 Clone this repository and change directories to the repository root. Install all dependencies with `composer install`.
