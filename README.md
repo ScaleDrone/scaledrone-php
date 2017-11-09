@@ -60,9 +60,14 @@ Channel stats
 $response = $client->channel_stats();
 ```
 
-Connected users list
+Getting the complete list of users from all rooms
 ```php
-$response = $client->users_list();
+$response = $client->members_list();
+```
+
+Getting the list of users in a room
+```php
+$response = $client->room_members_list('roomName');
 ```
 
 ## Running Tests

@@ -102,9 +102,35 @@ class Client
     /**
      * @return ResponseInterface
      */
-    public function users_list()
+    public function members_list()
     {
-        $response = $this->guzzle->request('GET', $this->channel_id . '/users', [
+        $response = $this->guzzle->request('GET', $this->channel_id . '/members', [
+            'auth'    => $this->auth,
+            'headers' => $this->headers,
+        ]);
+
+        return $response;
+    }
+
+    /**
+     * @return ResponseInterface
+     */
+    public function rooms_list()
+    {
+        $response = $this->guzzle->request('GET', $this->channel_id . '/rooms', [
+            'auth'    => $this->auth,
+            'headers' => $this->headers,
+        ]);
+
+        return $response;
+    }
+
+    /**
+     * @return ResponseInterface
+     */
+    public function room_members_list($room)
+    {
+        $response = $this->guzzle->request('GET', $this->channel_id . '/' . $room . '/members', [
             'auth'    => $this->auth,
             'headers' => $this->headers,
         ]);

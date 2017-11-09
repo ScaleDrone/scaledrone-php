@@ -113,7 +113,7 @@ final class ClientTest extends TestCase
 
         $mock->expects(static::once())
             ->method('request')
-            ->with('GET', 'kljasd7/users', [
+            ->with('GET', 'kljasd7/members', [
                 'auth'    => [
                     'kljasd7',
                     'laksdjkilroydwasnherelhjyr'
@@ -127,6 +127,52 @@ final class ClientTest extends TestCase
             'secret_key' => 'laksdjkilroydwasnherelhjyr',
         ]);
 
-        $client->users_list();
+        $client->members_list();
+    }
+
+    public function testRoomsList()
+    {
+        $mock = $this->getGuzzleMock();
+
+        $mock->expects(static::once())
+            ->method('request')
+            ->with('GET', 'kljasd7/rooms', [
+                'auth'    => [
+                    'kljasd7',
+                    'laksdjkilroydwasnherelhjyr'
+                ],
+                'headers' => [],
+            ])
+            ->willReturn($this->getResponseMock());
+
+        $client = new Client($mock, [
+            'channel_id' => 'kljasd7',
+            'secret_key' => 'laksdjkilroydwasnherelhjyr',
+        ]);
+
+        $client->rooms_list();
+    }
+
+    public function testRoomMembersList()
+    {
+        $mock = $this->getGuzzleMock();
+
+        $mock->expects(static::once())
+            ->method('request')
+            ->with('GET', 'kljasd7/room1/members', [
+                'auth'    => [
+                    'kljasd7',
+                    'laksdjkilroydwasnherelhjyr'
+                ],
+                'headers' => [],
+            ])
+            ->willReturn($this->getResponseMock());
+
+        $client = new Client($mock, [
+            'channel_id' => 'kljasd7',
+            'secret_key' => 'laksdjkilroydwasnherelhjyr',
+        ]);
+
+        $client->room_members_list('room1');
     }
 }
