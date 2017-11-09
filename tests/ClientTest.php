@@ -175,4 +175,27 @@ final class ClientTest extends TestCase
 
         $client->room_members_list('room1');
     }
+
+    public function testAllRoomMembersList()
+    {
+        $mock = $this->getGuzzleMock();
+
+        $mock->expects(static::once())
+            ->method('request')
+            ->with('GET', 'kljasd7/room-members', [
+                'auth'    => [
+                    'kljasd7',
+                    'laksdjkilroydwasnherelhjyr'
+                ],
+                'headers' => [],
+            ])
+            ->willReturn($this->getResponseMock());
+
+        $client = new Client($mock, [
+            'channel_id' => 'kljasd7',
+            'secret_key' => 'laksdjkilroydwasnherelhjyr',
+        ]);
+
+        $client->all_room_members_list();
+    }
 }

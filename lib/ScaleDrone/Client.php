@@ -137,4 +137,17 @@ class Client
 
         return $response;
     }
+
+    /**
+     * @return ResponseInterface
+     */
+    public function all_room_members_list()
+    {
+        $response = $this->guzzle->request('GET', $this->channel_id . '/room-members', [
+            'auth'    => $this->auth,
+            'headers' => $this->headers,
+        ]);
+
+        return $response;
+    }
 }
